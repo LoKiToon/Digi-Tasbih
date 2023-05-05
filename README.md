@@ -2,7 +2,7 @@
 ![App screenshot](screenshots/Digi-Tasbih_004.png)
 
 ## What is this?
-Digi-Tasbih is a digital version of [Tasbih](res/tasbih.wav) (تسبيح), which involves the repetition of a phrase "Subhan Allah" (سبحان الله) used to glorify Allah. This app will keep track of your counts, and in the future, you can manage your own goals in this app.
+Digi-Tasbih is a digital version of Tasbih (تسبيح), which involves the repetition of a phrase "Subhan Allah" (سبحان الله) used to glorify Allah. This app will keep track of your counts, and in the future, you can manage your own goals in this app.
 
 ## Additional information
 Before running this app, open a command prompt / terminal, and run the following commands
