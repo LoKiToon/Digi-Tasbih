@@ -96,6 +96,14 @@ class App(ctk.CTk):
             "thistle",
         ]
 
+        self.protocol(
+            "WM_DELETE_WINDOW",
+            lambda: [
+                config.set("Counter", "counter", str(self.counter)),
+                self.destroy(),
+            ],
+        )
+
         # Create .ini file ( if it was not created before ) to store app settings
 
         if not os.path.exists(configfile):
@@ -276,13 +284,11 @@ class App(ctk.CTk):
     def reset(self):
         self.counter = 0
         self.tasbih_screen.configure(text=f"{self.counter:09}")
-        config.set("Counter", "counter", str(self.counter))
 
     def set_value(self):
         try:
             self.counter = int(self.value_entry.get())
             self.tasbih_screen.configure(text=f"{self.counter:09}")
-            config.set("Counter", "counter", str(self.counter))
         except:
             print("Invalid integer.")
 
@@ -291,14 +297,12 @@ class App(ctk.CTk):
         if self.counter % self.beep_interval == 0:
             Thread(target=self.play_sound).start()
         self.tasbih_screen.configure(text=f"{self.counter:09}")
-        config.set("Counter", "counter", str(self.counter))
 
     def decrement(self):
         self.counter -= 1
         if self.counter < 0:
             self.counter = 0
         self.tasbih_screen.configure(text=f"{self.counter:09}")
-        config.set("Counter", "counter", str(self.counter))
 
     def set_beep_interval(self, value):
         try:
